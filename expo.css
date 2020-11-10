@@ -39,8 +39,14 @@ a {
 	text-decoration: none;
 	color: #141414;
 }
-ul li:hover:nth-child(3n) {
-	background: goldenrod;
+ul li:hover:nth-child(3n-1) a {
+	color: goldenrod;
+}
+ul li:hover:nth-child(2n) a {
+	color: cadetblue;
+}
+ul li:hover:nth-child(2n-1) a {
+	color: deeppink;
 }
 
 
