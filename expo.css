@@ -17,7 +17,6 @@ navbar {
 	display: flex;
 	position: fixed;
 	top: 10vh;
-	left: 4vw;
 	height: 85vh;
 	font-family: 'Montserrat';
 	font-weight: 400;
@@ -34,10 +33,13 @@ li {
 	width: fit-content;
 	margin: 2vh 0;
 	font-size: 4vh;
+
 }
 a {
 	text-decoration: none;
 	color: #141414;
+	padding:0 3vw;
+	transition: color .5s ease-in;
 }
 ul li:hover:nth-child(3n-1) a {
 	color: goldenrod;
@@ -50,9 +52,12 @@ ul li:hover:nth-child(2n-1) a {
 }
 
 
-info-wrap * {
+info-wrap {
 	display: flex;
 	flex-direction: column;
+}
+#landingImg {
+	max-width: 100%;
 }
 h2{
 	font-family: 'Source Serif Pro';
