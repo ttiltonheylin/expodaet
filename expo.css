@@ -1,0 +1,66 @@
+#page-wrap {
+	display: flex;
+	flex-direction: row;
+}
+#nav-wrap {
+	flex: 35%;
+	width: 35%;
+}
+#info-wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 65%;
+	width: 65%;
+	margin: 0 3vw;
+}
+navbar {
+	display: flex;
+	position: fixed;
+	top: 10vh;
+	left: 4vw;
+	height: 85vh;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	
+}
+ul {
+	display: flex;
+	flex-direction: column;
+	width: inherit;
+	list-style: none;
+}
+li {
+	display: flex;
+	width: fit-content;
+	margin: 2vh 0;
+	font-size: 4vh;
+}
+a {
+	text-decoration: none;
+	color: #141414;
+}
+ul li:hover:nth-child(3n) {
+	background: goldenrod;
+}
+
+
+info-wrap * {
+	display: flex;
+	flex-direction: column;
+}
+h2{
+	font-family: 'Source Serif Pro';
+	font-weight: lighter;
+	font-style: 200;
+}
+h4 {
+	font-family: 'Montserrat';
+	font-weight: lighter;
+}
+
+p {
+	font-family: 'Montserrat';
+	font-weight: 200;
+	font-style: oblique;
+	line-height: 4.5vh;
+}
