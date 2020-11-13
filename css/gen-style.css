@@ -1,13 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
 body {
     display: flex;
 }
 /*NAVBAR STYLING*/
 navbar {
 	display: flex;
-	position: relative;
-	top: 10vh;
+	position: fixed;
+	top: 8vh;
     left: 0vw;
-    margin-left: -5vw;
+	margin-left: -2vh;
+	height: fit-content;
 	font-family: 'Montserrat';
 	font-weight: 400;
 	
@@ -17,6 +21,7 @@ ul {
     flex-direction: column;
 	width: inherit;
 	list-style: none;
+	line-height: 6vh;
 }
 li {
 	display: flex;
@@ -32,13 +37,16 @@ a {
 	color: #141414;
 	transition: color .5s ease-in;
 }
-ul li:hover:nth-child(3n) a {
+ul li:hover:nth-child(2n-1) a {
 	color: goldenrod;
 }
 ul li:hover:nth-child(2n) a {
 	color: cadetblue;
 }
-ul li:hover:nth-child(2n-1) a {
+ul li:hover:nth-child(1) a {
+	color: deeppink;
+}
+ul li:hover:nth-child(5) {
 	color: deeppink;
 }
 
@@ -59,7 +67,7 @@ li.drop {
 ul.subdrop li a {
     padding: 0;
     margin: 0;
-    font-size: 1.8vh;
+    font-size: 3vh;
 }
 
 
