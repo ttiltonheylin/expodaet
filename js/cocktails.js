@@ -630,9 +630,9 @@ function cocktailMaker(recipe) {
             switch (true) {
                 case j==0:
                         newDrink.name = zero;
-                        newDrink["date created"] = one
+                        newDrink.dateCreated = one
                         newDrink.season = two;
-                        newDrink["restaurant created"] = three;
+                        newDrink.restaurantCreated = three;
                         break;
                     
                 case j==1 :
@@ -666,7 +666,76 @@ function cocktailMaker(recipe) {
         }
     }
 
-cocktailMaker(cocktailSpecs);
+
+var cocktailWrap = document.querySelector('.cocktail-wrap');
+var h2 = document.querySelector('.cocktail-name');
+var infoDiv = document.querySelector('.cockatil-info');
+var dateCreated = document.querySelector('.date-created');
+var season = document.querySelector('.season');
+var restaurantCreated = document.querySelector('.restaurant-created');
+var techniqueDiv = document.querySelector('.technique');
+var method = document.querySelector('.method');
+var glass = document.querySelector('.glass');
+var garnish = document.querySelector('.garnish');
+var ingredientsDiv = document.querySelector('.ingredients');
+var ingredientWrap = document.querySelector('.ingredient-wrap');
+var volume = document.querySelector('.volume');
+var unit = document.querySelector('.unit');
+var ingredientName = document.querySelector('ingredient-name');
+
+function cocktailPrinter(cocktails) {
+    cocktailMaker(cocktailSpecs);
+    
+    var i = 0;
+    for (i=0; i<cocktails.length; i++) {
+        var el = cocktails[i];
+        var cocktail_id = el.id;
+        var cocktailName = el.name;
+        var dateCreated = el.dateCreated;
+        var season = el.season;
+        var restCreated = el.restaurantCreated;
+        var method = el.method;
+        var glass = el.glass;
+        var garnish = el.garnish;
+        
+        var div = document.createElement('div');
+        div.setAttribute('class', 'section-wrap cocktail-wrap');
+        div.id = cocktail_id;
+        div.innerHTML =
+        `            <h4 class="cocktail-name">${cocktailName}</h4>
+            <div class="cocktail-info">
+                <span class="date-created">${dateCreated}</span>
+                <span class="season">${season}</span>
+                <span class="restaurant-created">${restCreated}</span>
+            </div>
+            <div class="technique">
+                <span class="method">${method}</span>
+                <span class="glass">${glass}</span>
+                <span class="garnish">${garnish}</span>
+            </div>
+            <div class="ingredients">
+            </div>
+        `
+        document.querySelector('#info-wrap').appendChild(div)
+        var j =0;
+        for (j=0; j < cocktails[i].ingredients.length; j++)
+        var ing = cocktails[i].ingredients[j];
+        var volume = ing.volume;
+        var unit = ing.unit;
+        var ingName = ing.name; 
+            div.setAttribute('class', 'ingredient-wrap');
+            div.innerHTML = 
+            `
+                    <span class="volume">${volume}</span>
+                    <span class="unit">${unit}</span>
+                    <span class="ingredient-name">${ingName}</span>
+            `;
+        document.querySelector('#'+ CSS.escape(cocktail_id)+'').appendChild(div);
+            
+
+
+    }
+}
 
 
 
